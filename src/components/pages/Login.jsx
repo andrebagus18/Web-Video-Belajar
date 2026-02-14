@@ -1,4 +1,4 @@
-import AuthLayout from "../layout/loginLayout";
+import AuthLayout from "../layout/userLayout";
 import Logins from "../organisms/logins";
 
 function Login() {

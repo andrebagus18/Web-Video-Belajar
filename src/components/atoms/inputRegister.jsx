@@ -2,7 +2,7 @@ import LogoImage from "../../assets/img/mdi_eye.png";
 import Button from "../atoms/button";
 import LogoIDN from "../../assets/flag/indonesia.png";
 
-function InputRegister() {
+function InputRegister({ children }) {
   return (
     <>
       <form className="space-y-4">
@@ -107,10 +107,13 @@ function InputRegister() {
           </div>
         </div>
 
-        <Button variant="primary">Daftar</Button>
+        <Button variant="primary" url={`/`}>
+          Daftar
+        </Button>
         <Button variant="outline" url="/login">
           Masuk
         </Button>
+        {children}
       </form>
     </>
   );

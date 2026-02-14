@@ -2,7 +2,7 @@ import LogoImage from "../../assets/img/mdi_eye.png";
 import Button from "../atoms/button";
 import { Link } from "react-router-dom";
 
-function InputLogin() {
+function InputLogin({ children }) {
   return (
     <>
       <form className="space-y-4">
@@ -44,10 +44,13 @@ function InputLogin() {
           </Link>
         </div>
 
-        <Button variant="primary">Masuk</Button>
+        <Button variant="primary" url={`/`}>
+          Masuk
+        </Button>
         <Button variant="outline" url={`/register`}>
           Daftar
         </Button>
+        {children}
       </form>
     </>
   );

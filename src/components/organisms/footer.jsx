@@ -18,7 +18,6 @@ function Footer() {
       <div className="max-w-7xl mx-auto">
         {/* === Desktop Footer === */}
         <div className="hidden md:grid grid-cols-4 gap-10 lg:gap-40">
-          {/* Kiri: Logo + Deskripsi */}
           <div>
             <Logo />
             <p className="mt-2 text-md font-poppins font-semibold">
@@ -71,8 +70,6 @@ function Footer() {
         </div>
       </div>
 
-      {/* === Batas bawah (garis + copyright) === */}
-      {/* Wrapper biar sejajar */}
       <div className="w-full max-w-7xl mx-auto px-1 pb-2.5">
         {/* Garis */}
         <hr className="border-t border-gray-300 w-full mb-4 mt-4" />
@@ -85,11 +82,11 @@ function Footer() {
           </p>
 
           {/* Sosial Media */}
-          <div className="flex space-x-3">
-            <img src={linkedin} alt="LinkedIn" className="w-9 h-9" />
-            <img src={Facebook} alt="Facebook" className="w-9 h-9" />
-            <img src={twitter} alt="Twitter" className="w-9 h-9" />
-            <img src={instagram} alt="Instagram" className="w-9 h-9" />
+          <div className="flex space-x-1.5">
+            <img src={linkedin} alt="LinkedIn" className="w-7 h-7" />
+            <img src={Facebook} alt="Facebook" className="w-7 h-7" />
+            <img src={twitter} alt="Twitter" className="w-7 h-7" />
+            <img src={instagram} alt="Instagram" className="w-7 h-7" />
           </div>
         </div>
       </div>
