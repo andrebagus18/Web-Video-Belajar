@@ -39,7 +39,7 @@ function InputRegister({ children }) {
 
           <div className="flex items-center">
             {/* Bendera */}
-            <div className="w-12 h-12 bg-[#f0f0f0] flex items-center justify-center border border-[#3a35411f] rounded-l-md">
+            <div className="w-12 h-12 max-xs:hidden bg-[#f0f0f0] flex items-center justify-center border border-[#3a35411f] rounded-l-md">
               <img src={LogoIDN} alt="indonesia" className="w-6 h-6" />
             </div>
 
@@ -62,7 +62,7 @@ function InputRegister({ children }) {
               name="phone"
               required
               placeholder=""
-              className="flex-1 h-12 px-3 ml-2 border border-[#3a35411f] rounded-md focus:ring-2 focus:ring-green-500 outline-none"
+              className="flex-1 h-12 px-3 max-xs:px-0 ml-2 border border-[#3a35411f] rounded-md focus:ring-2 focus:ring-green-500 outline-none"
             />
           </div>
         </div>

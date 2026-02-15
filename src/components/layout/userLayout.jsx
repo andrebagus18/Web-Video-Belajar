@@ -4,7 +4,7 @@ function AuthLayout({ children }) {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header */}
-      <header className="bg-white shadow-[20px_10px_40px_rgba(62,67,74,0.31)] relative z-10 w-full h-18 md:pl-10 flex items-center md:shadow-none">
+      <header className="bg-white shadow-[20px_10px_40px_rgba(62,67,74,0.31)] relative z-10 w-full h-18 md:pl-10 flex items-center md:shadow-none max-sm:pl-5">
         <Logo className="absolute left-1/2 -translate-x-1/2" />
       </header>
 
