@@ -16,7 +16,7 @@ function Button({ children, onClick, variant = "primary", url }) {
   }
 
   return (
-    <button onClick={onClick} className={styles[variant]}>
+    <button onClick={onClick} className={styles[variant]} type="submit">
       {children}
     </button>
   );

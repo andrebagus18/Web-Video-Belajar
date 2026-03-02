@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import IconOut from "../../assets/icon/IconOut.png";
 import UseMenu from "../../stores/useMenu";
+import { useNavigate } from "react-router-dom";
 
 function TabMenu() {
   const isOpen = UseMenu((state) => state.isOpen);
   const closeMenu = UseMenu((state) => state.closeMenu);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
 
   return (
     <div
@@ -34,6 +40,7 @@ function TabMenu() {
           <Link
             to="/login"
             className="inline-flex items-center w-full px-4 py-2 hover:bg-gray-700/10 text-orange-600"
+            onClick={handleLogout}
           >
             Keluar
             <img src={IconOut} alt="IconOut" className="w-5 h-4 ml-3" />

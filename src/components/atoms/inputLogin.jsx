@@ -1,11 +1,38 @@
 import LogoImage from "../../assets/img/mdi_eye.png";
 import Button from "../atoms/button";
 import { Link } from "react-router-dom";
+import api from "../../api/axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 function InputLogin({ children }) {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await api.get("/users");
+      const userIn = response.data.find(
+        (u) => u.email === email && u.password === password,
+      );
+
+      if (userIn) {
+        localStorage.setItem("userData", JSON.stringify(userIn));
+        localStorage.setItem("isLogin", "true");
+        navigate("/");
+      } else {
+        alert("Username atau Password salah!");
+      }
+    } catch (error) {
+      console.error("Koneksi Gagal!");
+    }
+  };
+
   return (
     <>
-      <form className="space-y-4">
+      <form onSubmit={handleLogin} className="space-y-4">
         <div className="flex flex-col space-y-1">
           <label className="text-sm font-poppins font-medium text-[#333333ad] border-[#3a35411f]">
             E-Mail<span className="text-red-500">*</span>
@@ -13,6 +40,8 @@ function InputLogin({ children }) {
           <input
             className="w-full border border-[#3a35411f] rounded-md p-3"
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder=""
           />
         </div>
@@ -23,6 +52,8 @@ function InputLogin({ children }) {
           <div className="relative">
             <input
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder=""
               className="pr-10 w-full border border-[#3a35411f] rounded-md p-3" // kasih padding kanan biar tidak ketimpa icon
             />
@@ -44,9 +75,7 @@ function InputLogin({ children }) {
           </Link>
         </div>
 
-        <Button variant="primary" url={`/`}>
-          Masuk
-        </Button>
+        <Button variant="primary">Masuk</Button>
         <Button variant="outline" url={`/register`}>
           Daftar
         </Button>
