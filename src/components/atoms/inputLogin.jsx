@@ -25,8 +25,9 @@ function InputLogin({ children }) {
       } else {
         alert("Username atau Password salah!");
       }
-    } catch (error) {
-      console.error("Koneksi Gagal!");
+    } catch {
+      alert("Anda belum terdaftar!");
+      navigate("/register");
     }
   };
 

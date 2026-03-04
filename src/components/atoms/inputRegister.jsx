@@ -190,7 +190,7 @@ function InputRegister({ children }) {
               placeholder=""
               value={dataForm.confirmPassword}
               onChange={handleChange}
-              className="pr-10 w-full border border-[#3a35411f] rounded-md p-3"
+              className="pr-10 w-full border border-[#3a35411f] rounded-md p-3 overflow-hidden"
             />
             {errors.confirmPassword && (
               <p className="text-red-500 text-[12px]">
