@@ -13,7 +13,7 @@ function InputLogin({ children }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.get("/users");
+      const response = await api.get("/DB-Video-2");
       const userIn = response.data.find(
         (u) => u.email === email && u.password === password,
       );

@@ -42,7 +42,9 @@ function InputRegister({ children }) {
         return;
       }
       // cek email
-      const cekUser = await api.get("/users");
+      const cekUser = await api.get("/DB-Video-2");
+      console.log(cekUser);
+      console.log(cekUser.data);
       const emailSudahAda = cekUser.data.some(
         (item) => item.email === dataForm.email,
       );
@@ -53,7 +55,7 @@ function InputRegister({ children }) {
       }
 
       // kirim data ke api
-      const response = await api.post("/users", {
+      const response = await api.post("/DB-Video-2", {
         fullName: dataForm.fullName,
         email: dataForm.email,
         phone: dataForm.phone,
